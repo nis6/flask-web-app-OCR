@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block head %} 
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/ocr.css') }}">
+
+{% endblock %}
+
+
+{% block body %} 
+
+<h1>
+  OCR PREDICTION BY TESSERACT
+</h1>
+<h3>
+    Here is the extracted text from the image
+</h3>
+<div class="container1">
+    <label for="ptext" >Text from the image: </label>
+    <br>
+    <textarea id="ptext" name="ptext" rows="20" cols="50">
+    {{recognised_text}}
+    </textarea >
+    <br>
+   
+    <label for="bb" >Text bounding boxes on image: </label>
+    <br>
+    <img id="bb" src="data:image/jpeg;base64,{{base64_blob}}" onclick="window.open(this.src)">
+
+    <!-- <a href={{base64_blob}} target="new">
+        <img src="data:image/jpeg;base64,{{base64_blob}}" alt="random image" width="400" height="300">
+    </a> -->
+
+    
+
+    
+        <!-- <img src='' width="500" height="333" align ="center"  onclick="window.open('anotherpage.html', '_blank');" />
+     -->
+
+    
+</div>
+
+<br><a href='/' align="center">Go Back</a>
+
+
+
+{% endblock %}
+
+
+
+
+

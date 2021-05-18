@@ -1,0 +1,67 @@
+head{
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+    background-color: rgb(3, 92, 92);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    line-height: normal;
+    margin-bottom: 100px;
+}
+
+/* .contn {
+    margin-left: 100px;
+    margin-right: 100px;
+    border: black;
+    color: grey;
+} */
+
+h1{
+    border : 2px outset white;
+    background-color: grey;    
+    text-align: center;
+    margin:auto;
+    width: 40%;
+    padding: 10px;
+}
+
+a {
+    color: black;
+    font-family: cursive;
+    font-size: medium;
+}
+
+a:hover{
+    color:burlywood;
+
+}
+
+a:visited{
+    color: darkgrey;
+}
+
+.container{
+
+    align-self: center;
+    background-color:  white;
+    border-radius: 10px;
+    border: 5px solid  gray;
+
+    align-items: center;
+    text-align: center;
+    
+    align-content: center;
+    margin: auto;
+    width: 50%;
+    padding-right: 10px;
+    
+}
+
+label{
+    align-self: auto;
+    color: black;
+    font-size: medium;
+}

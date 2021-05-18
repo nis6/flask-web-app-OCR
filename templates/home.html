@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block head %} 
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+
+{% endblock %}
+
+
+{% block body %} 
+
+<h1>
+    OCR DETECTION BY TESSERACT
+</h1>
+<h3>
+    Please provide an image( a jpeg/jpg/png... file) and the image type(a number)
+    
+</h3>
+<p><div class="list">
+    <strong>For image type pass</strong>
+    <ul>
+        <li>1 for low contrast image</li>
+        <li>2 for skewed plain text</li>
+        <li>3 for skewed text with background</li>
+        <li>4 pass</li>
+        <li>5 else type image  </li>
+        <li>6 to detect digits only  </li>
+        <li>7 if text consists of digits only  </li>
+        
+    </ul>
+</div>
+</p>
+
+<div class="container"> 
+<form class="myform" action="/submit" method="POST" enctype = "multipart/form-data">
+    <label for="input_image">Upload an image: </label><br>
+    <div class="file-input">
+    
+    <input type=file name="input_image" accept="image/*">  
+    </div><br>
+    
+    <div class="form-group">
+    <label for="image_type">Select the image type: </label><br>
+    <input name="image_type" type=number placeholder="select mage_type">
+    </div><br><br>
+
+    <input class="button" type=submit value=Predict>
+   
+</form>
+</div>
+
+{% endblock %}
+
+
+
