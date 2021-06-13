@@ -1,0 +1,16 @@
+sudo PATH=$PATH \
+	`which gunicorn` \
+	-b :3000 \
+	--certfile=/etc/letsencrypt/live/nisha.workspaces.aws.codecrafts.cf/fullchain.pem \
+	--keyfile=/etc/letsencrypt/live/nisha.workspaces.aws.codecrafts.cf/privkey.pem \
+	main:app
+
+sudo PATH=$PATH `which gunicorn` -b :443 --certfile=/etc/letsencrypt/live/messy-vm.do.codecrafts.cf/fullchain.pem --keyfile=/etc/letsencrypt/live/messy-vm.do.codecrafts.cf/privkey.pem main:app
+
+# used 3001 port
+sudo PATH=$PATH \
+	`which gunicorn` \
+	-b :3001 \
+	--certfile=/etc/letsencrypt/live/nisha.workspaces.aws.codecrafts.cf/fullchain.pem \
+	--keyfile=/etc/letsencrypt/live/nisha.workspaces.aws.codecrafts.cf/privkey.pem \
+	main:app

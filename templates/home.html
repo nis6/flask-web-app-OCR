@@ -1,55 +1,98 @@
-{% extends "base.html" %}
-
-{% block head %} 
-
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
-
-{% endblock %}
-
-
-{% block body %} 
-
-<h1>
-    OCR DETECTION BY TESSERACT
-</h1>
-<h3>
-    Please provide an image( a jpeg/jpg/png... file) and the image type(a number)
-    
-</h3>
-<p><div class="list">
-    <strong>For image type pass</strong>
-    <ul>
-        <li>1 for low contrast image</li>
-        <li>2 for skewed plain text</li>
-        <li>3 for skewed text with background</li>
-        <li>4 pass</li>
-        <li>5 else type image  </li>
-        <li>6 to detect digits only  </li>
-        <li>7 if text consists of digits only  </li>
+<!DOCTYPE html >
+<html>
+    <head lang="en" > 
+        <link rel="icon" href="data:;base64,=">
+        <meta http-equiv="content-language" content="en">
+        <meta charset="UTF-8">        
+       
+    </head>
+    <header>
+        <title>OCR</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">  
+        <!--  -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}">
         
-    </ul>
-</div>
-</p>
+    </header>
+       
+    <body>
+        <div class="page-title" >
+            <h1>OCR DETECTION</h1>
+        </div>
+        <div class="main-box">
+            <form  id="myform" class="myform" action="/submit" method="POST" enctype = "multipart/form-data">
+        
+                <h1 id='heading' >Welcome to the Codescraft-OCR!</h1><br>
+                <div class="image-input">
+                    <label for="input_image"> <strong> Upload an image: </strong> </label><br><br>
+                    <input name="input_image" type="file" id="input-file",class="input-field"> 
+                    <input type="hidden" id="inputhid" name="image-live" value="">
+                </div>
 
-<div class="container"> 
-<form class="myform" action="/submit" method="POST" enctype = "multipart/form-data">
-    <label for="input_image">Upload an image: </label><br>
-    <div class="file-input">
-    
-    <input type=file name="input_image" accept="image/*">  
-    </div><br>
-    
-    <div class="form-group">
-    <label for="image_type">Select the image type: </label><br>
-    <input name="image_type" type=number placeholder="select mage_type">
-    </div><br><br>
+                <div class="list">
+                    <p> <strong>Please select the image type: </strong></p>
+                    <div class="radio">
+                        <input type="radio" name="image_type" id="1" value=1>
+                        <label for="1" >low contrast image</label><br>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" name="image_type" id="2" value=2>
+                        <label for="2" >skewed plain text</label><br>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" name="image_type" id="3" value=3>
+                        <label for="3" >skewed text with background</label><br>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" name="image_type" id="4" value=4>
+                        <label for="4" >none of these</label><br>   
+                    </div>
+                    <div class="radio">
+                        <input type="radio" name="image_type" id="5" value=5>
+                        <label for="5">natural scenes or street images</label><br>  
+                    </div>
+                    <div class="radio">
+                        <input type="radio" name="image_type" id="6" value=6>
+                        <label for="6" >detect digits only</label><br>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" name="image_type" id="7" value=7>
+                        <label for="7" >text consists of digits only</label><br>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" name="image_type" id="8" value=8>
+                        <label for="8" >to live capture an image</label><br>
+                    </div>   
+                    
 
-    <input class="button" type=submit value=Predict>
-   
-</form>
-</div>
+                </div>
+                
+                <div id='msg' inline></div>    
 
-{% endblock %}
+                <input type="submit" class="btn" id="submit-btn" value="Predict" >
+        
+            </form>
+            
+            <!-- <p><span id="errormsg"></span></p> -->
+            <!-- stream video via webcam -->
+            <div class="video-wrap">
+                <video id="avideo" playsinline autoplay></video>
+            </div>
+            
+            <!-- trigger canvas api -->
+            <div class="controller">
+                <button id="cancel">Cancel</button>
+                <button id="snap">Capture</button>
+            </div>
+            <!-- webcam video snapshot -->
+            <canvas id="acanvas" width="640" height="480"></canvas>
 
-
+            <!-- <label for="imgpre"> Image Preview</label>
+            <div class="image-pre" id="imgpre">
+                
+                <img src="" alt="Image Preview" class="img-pre-img">
+                <span class="img-pre-img-text">Image-Preview-Span</span> -->
+        </div>
+    </body>
+    <script type="text/javascript" src="static/js/main.js"> </script>
+</html>
 

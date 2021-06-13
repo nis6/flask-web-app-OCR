@@ -1,0 +1,101 @@
+
+.main-box .list{
+    border: outset gainsboro;
+    margin: 8px;
+    padding: 3px;
+    border: 1px ;
+    padding: 10px;
+}
+
+.radio {
+    border: 2px outset #e0dcd7;
+    background-color: #2f4353;
+    background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 60%);
+    padding: 2px;
+    padding-bottom:3px ;
+    margin: 6px;
+    width: 80%;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.image-input{
+    margin-left: 20px;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+}
+
+.image-type{
+    margin: 4px;
+}
+
+
+.main-box .list .list-item{
+    margin: 3px;
+}
+
+.image-pre{
+    width: 300px;
+    min-height: 100px;
+    border: 2px solid grey;
+    margin: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color:grey;
+}
+
+.img-pre-img{
+    display: none;
+    width: 100%;
+}
+
+.btn{
+    background-color: #2f4353;
+    background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 300%);
+    color: black;
+    border-radius: 4px;
+    border-color: outset whitesmoke;
+    margin-top: 10px;
+    margin-left: 40%;
+    margin-right: 60%;
+    font-size: x-large;
+    color:#d2ccc4;
+    padding: 4px;
+}
+
+.input-field{
+    background-color: #2f4353;
+    background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 300%);
+    margin: 4px;
+    border-radius: 4px;
+    
+}
+
+.subm-btn{
+    background-color: chartreuse;
+    content:'loading';
+}
+
+.error{
+    padding: 1px;
+    color:red;
+    /* border: 1px solid grey; */
+    
+}
+
+.capture-area{
+    margin:auto;
+    padding:10px;
+    border : 2px outset white;
+}
+
+.ocr-label{
+    margin-top: 8px;
+    margin-bottom: 5px;
+    text-emphasis: bold ;
+
+}

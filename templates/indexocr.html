@@ -1,0 +1,46 @@
+<!DOCTYPE html >
+<html>
+    <head > 
+      <meta http-equiv="content-language" content="en">
+      <meta charset="UTF-8"> 
+      <!-- <meta charset="ISO-8859-1"> -->
+       <!-- <link rel="icon" href="data:;base64,=">  -->
+       
+    </head>
+    <header>
+        <title>OCR</title>
+        
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}">
+    </header>
+       
+       <body>
+            <div class="page-title" >
+                <h1>OCR DETECTION</h1>
+                <!-- <p>Please provide an image( a jpeg/jpg/png... file) and the image type(a number)</p> -->
+            </div>
+            <div class="main-box">
+                <h1 id='heading' >Here's the extracted text from your image.</h1><br>
+                <div class="ocr-label">
+                    <label for="ptext" ><h3>Text from the image: </h3></label>
+                </div>
+              <textarea id="ptext" name="ptext" rows="20" cols="80">
+              {{recognised_text}}
+              </textarea >
+              <br>
+              <div class="ocr-label">
+                <label for="bb"  ><h3>Text bounding boxes on image: </h3></label>
+              </div>
+              <img id="bb" src="data:image/jpeg;base64,{{base64_blob}}" onclick="window.open(this.src)">
+              
+              <div class="link">
+                <a id="link" href="/" >OCR AGAIN</a>
+              </div>
+              
+            </div>
+      
+
+       <!-- <script src="{{ url_for('static', filename='js/main.js') }}"></script> -->
+       </body>
+</html>
+

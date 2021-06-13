@@ -1,0 +1,26 @@
+Loaded plugins: amzn_workspaces_filter_updates, halt_os_update_check,
+              : priorities, update-motd
+323 packages excluded due to repository priority protections
+No package 3.05.0 available.
+Resolving Dependencies
+--> Running transaction check
+---> Package tesseract.x86_64 0:3.04.00-3.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package            Arch            Version                 Repository     Size
+================================================================================
+Installing:
+ tesseract          x86_64          3.04.00-3.el7           epel           11 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 11 M
+Installed size: 40 M
+Is this ok [y/d/N]: Exiting on user command
+Your transaction was saved, rerun it with:
+ yum load-transaction /tmp/yum_save_tx.2021-06-05.16-04.IXeHNc.yumtx

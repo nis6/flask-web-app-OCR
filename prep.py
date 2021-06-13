@@ -102,17 +102,26 @@ def skew_correction_textwithbg(image):
         # Find all contours
         contours, hierarchy = cv2.findContours(dilate, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
         contours = sorted(contours, key = cv2.contourArea, reverse = True)
-
+        # print('sorted',contours)
         # Find largest contour and surround in min area box
         largestContour = contours[0]
-        minAreaRect = cv2.minAreaRect(largestContour)
-        
+        # print("largestcont",largestContour)
+        mina = cv2.minAreaRect(largestContour)
+
+        tempsize=tuple(reversed(mina[1]))
+        tempangle=mina[2]-90
+        minarea=(mina[0],tempsize,tempangle)
+
+        # print("minarea",minAreaRect)
         #draw the rectangle on contour
-        box = np.int0(cv2.boxPoints(minAreaRect))
+        print("type of min",type(minarea))
+        box = np.int0(cv2.boxPoints(minarea))
+        # print("box",box)
         rect=cv2.drawContours(img, [box], 0, (36,255,12), 3)
         
         # Determine the angle. Convert it to the value that was originally used to obtain skewed image
-        angle = minAreaRect[-1]
+        angle = minarea[-1]
+        print("the original angle: ",angle)
         if angle < -45:
             angle = (90 + angle)
         else:
@@ -161,17 +170,15 @@ def processed_img(img,img_type):
     elif img_type == 3: 
         image= skew_correction_textwithbg(img)
         #print("type of image: ",type(img))
-    elif img_type == 4: 
-        pass
-    elif img_type == 5:
+    elif img_type == 4:
         image=img
     
     return image
 
 
 if __name__== "__main__":
-    img=cv2.imread("/home/nisha/Desktop/sk3.png")
-    img=processed_img(img,2)
+    img=cv2.imread("/home/nisha/Desktop/rec2.jpeg")
+    img=processed_img(img,3)
     cv2.imshow("gfh",img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
