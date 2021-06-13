@@ -4,12 +4,14 @@ head{
 }
 
 body{
-    background-color: rgb(3, 92, 92);
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    /* background-color: #c2b6b6;
+background-image: linear-gradient(315deg, #c2b6b6 0%, #576574 74%); */
+
+    background-color:#223b50;
+    /* background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%); */
+  font-family: Arial, Helvetica, sans-serif;
     font-size: small;
-    line-height: normal;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
 }
 
 /* .contn {
@@ -19,49 +21,101 @@ body{
     color: grey;
 } */
 
-h1{
-    border : 2px outset white;
-    background-color: grey;    
+.main-box h1{
+    border : 2px outset white;   
     text-align: center;
-    margin:auto;
-    width: 40%;
+    margin:6px;
     padding: 10px;
 }
 
-a {
+.page-title{
+    
+    /* background-color: #d3d3d3;
+background-image: linear-gradient(315deg, #d3d3d3 0%, #57606f 74%); */
+background-color: #2f4353;
+background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%);
+
+    /* radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%); */
+    border-bottom:8px solid gray ;
+    text-align: center;
+    margin:6px;
+    padding: 10px;
+    font-size: x-large;
+    
+}
+
+
+.main-box.link {
     color: black;
     font-family: cursive;
     font-size: medium;
+    background-color: whitesmoke;
+    color: black;
+    
+}
+.main-box.link{
+    border-radius: 4px;
+    padding: 3px;
+    margin: 10px;
+    align-content: center;
+    align-self: center;
+    align-items: center;
 }
 
-a:hover{
-    color:burlywood;
 
+a:hover{
+    background-color:burlywood;
 }
 
 a:visited{
-    color: darkgrey;
+    background-color: darkgrey;
 }
 
-.container{
 
-    align-self: center;
-    background-color:  white;
-    border-radius: 10px;
-    border: 5px solid  gray;
 
-    align-items: center;
-    text-align: center;
+.main-box {
     
+    padding: 10px;
+    margin-top: 80px;
+    margin-left: 100px;
+    margin: 30px ;
+    /* background-color: #d9d9d9;
+    background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%); */
+    background-color: #2f4353;
+    background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 50%);
+    border: 3px solid gray;
+    width: 90%;
+   
     align-content: center;
-    margin: auto;
-    width: 50%;
-    padding-right: 10px;
-    
 }
+
 
 label{
     align-self: auto;
     color: black;
-    font-size: medium;
+    font-size: small; 
 }
+
+label[for="imgpre"]{
+    align-self: center;
+    align-self: center;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    padding-top: 10px;
+    color: black;
+    font-size: medium;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+#error-image{
+    width:100%;
+    padding:3px;
+
+}
+
+
+.d-none {
+    display: none !important;
+  }
